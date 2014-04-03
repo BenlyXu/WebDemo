@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+#header {
+	margin: 3px auto;
+	height: 50px;
+	background: #bfbfbf;
+}
+
+#footer {
+	margin: 3px auto;
+	height: 80px;
+	background: #bfbfbf;
+}
+
+#main_content {
+	margin: 3px auto;
+	width: 80%;
+}
+
+#side {
+	width: 120px;
+	height: 600px;
+	float: left;
+	background: #f2f2f2;
+}
+
+#side_r {
+	width: 180px;
+	height: 600px;
+	float: right;
+	background: #f2f2f2;
+}
+
+#main {
+	height: 600px;
+	margin: 0 182px 0 122px;
+	background: #f2f2f2;
+}
+
+#img00 {
+	float: left;
+	width: 202px;
+}
+
+#img00_desc {
+	padding-right: 5px;
+	font-size: 18px;
+	line-height: 200%;
+}
+
+#logo {
+	margin: 2px 0px 2px 137px;
+	width: 46px;
+	height: 46px;
+}
+
+#sign_up {
+	float: right;
+	padding-top: 10px;
+	padding-right: 50px;
+}
+
+#sign_in {
+	float: right;
+	padding-top: 10px;
+	margin-right: 10px;
+}
+
+.ui-widget {
+	font-size: 0.1em;
+}
+
+#company {
+	padding-top: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#date_time {
+	margin: 10px auto;
+	text-align: center;
+}
