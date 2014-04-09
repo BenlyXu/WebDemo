@@ -31,7 +31,8 @@
 		</div>
 	</form>
 	
-	<a href="LoginServlet?name=admin">Login</a>
+	<a href="UserServlett?name=admin">Login</a>
+	
 	<script type="text/javascript">
 		var msg = '${msg}';
 		if(msg != '') {
