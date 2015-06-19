@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j;
  * @date 2014年4月9日 上午11:22:56
  */
 @Log4j
-public class DBPoolUtil {
+public final class DBPoolUtil {
 	
 	private static final String DEFAULT_POOL_NAME = "proxool.mysql";
 	

@@ -31,7 +31,7 @@
 		</div>
 	</form>
 	
-	<a href="UserServlett?name=admin">Login</a>
+	<a href="UserServlet?name=admin">Login</a>
 	
 	<script type="text/javascript">
 		var msg = '${msg}';

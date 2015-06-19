@@ -10,7 +10,7 @@
 		<driver-class>com.mysql.jdbc.Driver</driver-class> <!--驱动类-->
 		<driver-properties>
 			<property name="user" value="root" /> <!--用户名-->
-			<property name="password" value="mysql" /><!--密码-->
+			<property name="password" value="spring" /><!--密码-->
 		</driver-properties> 
 		<!--最大连接数(默认5个),超过了这个连接数,再有请求时,就排在队列中等候,最大的等待请求数由maximum-new-connections决定 -->
 		<maximum-connection-count>5</maximum-connection-count> 

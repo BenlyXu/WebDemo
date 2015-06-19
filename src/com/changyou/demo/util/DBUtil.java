@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j;
  * @date 2014年4月9日 上午11:23:10
  */
 @Log4j
-public class DBUtil {
+public final class DBUtil {
 	
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
 	private static final String URL = "jdbc:mysql://127.0.0.1:3306/mysql";

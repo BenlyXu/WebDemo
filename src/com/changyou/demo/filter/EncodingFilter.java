@@ -44,6 +44,8 @@ public class EncodingFilter implements Filter {
 		req.setCharacterEncoding(encoding);
 		res.setCharacterEncoding(encoding);
 		
+		log.info("Http request & response encoding are configured utf-8.");
+		
 		chain.doFilter(req, res);
 	}
 
