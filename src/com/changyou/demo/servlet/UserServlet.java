@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.changyou.demo.util.DBPoolUtil;
-import com.changyou.demo.util.DBUtil;
+import com.changyou.demo.util.db.DBPoolUtil;
+import com.changyou.demo.util.db.DBUtil;
 
 import lombok.extern.log4j.Log4j;
 
@@ -33,8 +33,8 @@ public class UserServlet extends HttpServlet {
 		} else {
 			req.setAttribute("msg", "OMG, what is your name?");
 		}
-		DBUtil.getConnection();
-		DBPoolUtil.getDefaultPoolConnection();
+		DBUtil.getInstance().getConnection();
+		DBPoolUtil.getInstance().getConnection();
 		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}
 

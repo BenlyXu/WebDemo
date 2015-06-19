@@ -25,5 +25,8 @@ public final class Constants {
 	public static final String DB_PASSWORD = Constants.DB_PROP.getProperty("db.mysql.password");
 	
 	
+	public static final String DEFAULT_POOL_NAME = "proxool.mysql";
+	
+	
 	
 }
