@@ -8,16 +8,16 @@ import lombok.Data;
  * @author Ben
  * @date Jun 18, 2015 3:59:15 PM
  */
-public class NodeReverse {
+public class SingleLinkedNode {
 
 	
 	// 递归解决
-	public Node reverse(Node head) {
+	public Node recurReverse(Node head) {
 		if (null == head || null == head.getNext()) {
 	        return head;
         }
 		// 递归
-		Node reverseHead = reverse(head.getNext());
+		Node reverseHead = recurReverse(head.getNext());
 		// 获取先前的下一个节点，让该节点指向自身
 		head.getNext().setNext(head);
 		// 破坏自己以前的指向
@@ -27,7 +27,7 @@ public class NodeReverse {
 	}
 	
 	// 将当前节点的下一个节点缓存后，更改当前节点的指针
-	public Node reverse2(Node head) {
+	public Node normalReverse(Node head) {
 		if (null == head) {
 	        return head;
         }
