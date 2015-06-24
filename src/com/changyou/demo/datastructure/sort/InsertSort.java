@@ -14,14 +14,26 @@ public class InsertSort {
 		int len = arr.length;
 		for (int i = 1; i < len; i++) {
 			int toInsEle = arr[i];
-			int j = i;
-			for (; j > 0; j--) {
-				if (arr[j - 1] < toInsEle) {
-					break;
-				}
-				arr[j] = arr[j - 1];
+			int j = i - 1;
+			for (; j >= 0 && toInsEle < arr[j]; j--) {
+				// 将大于toInsEle的值整体后移一个单位
+				arr[j + 1] = arr[j];
 			}
-			arr[j] = toInsEle;
+			arr[j + 1] = toInsEle;
+		}
+	}
+	
+	public void sortWithWhileLoop(int[] arr) {
+		int i = 1;
+		while (i < arr.length) {
+			int temp = arr[i];
+			int j = i - 1;
+			while (j >= 0 && temp < arr[j]) {
+				arr[j + 1] = arr[j];
+				j--;
+			}
+			arr[j + 1] = temp;			
+			i++;
 		}
 	}
 
@@ -29,7 +41,8 @@ public class InsertSort {
 		int[] arr = {11, 31, 12, 5, 34, 30, 26, 38, 36, 18};
 		
 		InsertSort is = new InsertSort();
-		is.sort(arr);
+//		is.sort(arr);
+		is.sortWithWhileLoop(arr);
 		
 		ArraysUtil.print(arr);
 	}
