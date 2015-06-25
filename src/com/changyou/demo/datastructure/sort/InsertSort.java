@@ -10,9 +10,25 @@ package com.changyou.demo.datastructure.sort;
  */
 public class InsertSort {
 	
+	public void straightSort(int[] arr) {
+		for (int i = 1; i < arr.length; i++) {
+			// 当前元素小于前一个元素
+			if (arr[i] < arr[i - 1]) {
+				// 设置哨兵
+				int temp = arr[i];
+				// 记录后移
+				int j = i - 1;
+				for (; j >= 0 && arr[j] > temp; j--) {
+					arr[j + 1] = arr[j];
+				}
+				// 哨兵入队
+				arr[j + 1] = temp;
+			}
+		}
+	}
+	
 	public void sort(int[] arr) {
-		int len = arr.length;
-		for (int i = 1; i < len; i++) {
+		for (int i = 1; i < arr.length; i++) {
 			int toInsEle = arr[i];
 			int j = i - 1;
 			for (; j >= 0 && toInsEle < arr[j]; j--) {
@@ -42,7 +58,8 @@ public class InsertSort {
 		
 		InsertSort is = new InsertSort();
 //		is.sort(arr);
-		is.sortWithWhileLoop(arr);
+//		is.sortWithWhileLoop(arr);
+		is.straightSort(arr);
 		
 		ArraysUtil.print(arr);
 	}

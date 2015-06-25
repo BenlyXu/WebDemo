@@ -2,7 +2,7 @@ package com.changyou.demo.datastructure.sort;
 
 /**
  * 冒泡排序
- * 基本思想：将待排序的元素看做竖直排列的气泡，较小的元素比较轻，从而要往上浮。
+ * 基本思想：两两比较，交换相邻的元素
  * 时间复杂度：O(n^2)
  * 空间复杂度：O(1)
  * @author xubenling
@@ -11,20 +11,62 @@ package com.changyou.demo.datastructure.sort;
 public class BubbleSort {
 	
 	public void sort(int[] arr) {
-		int len = arr.length;
-		for (int i = 0; i < len; i++) {
-			for (int j = i + 1; j < len; j++) {
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
 				if (arr[i] > arr[j]) {
 					ArraysUtil.swap(arr, i, j);
 				}
 			}
 		}
 	}
+	
+	/**
+	 * 真正意义上的冒泡排序
+	 * @param arr
+	 */
+	public void realSort(int[] arr) {
+		for (int i = 1; i < arr.length; i++) {
+			// 从后往前循环
+			for (int j = arr.length - 1; j >= i; j--) {
+				// 两两比较，后者小于前者，则交换位置
+				if (arr[j] < arr[j - 1]) {
+					ArraysUtil.swap(arr, j, j - 1);
+				}
+			}
+		}
+	}
+	
+	/**
+	 * 对冒泡排序的优化
+	 * @param arr
+	 */
+	public void realSort2(int[] arr) {
+		boolean flag = true;
+		for (int i = 1; i < arr.length && flag; i++) {
+			flag = false;
+			for (int j = arr.length - 1; j >= i; j--) {
+				if (arr[j] < arr[j - 1]) {
+					ArraysUtil.swap(arr, j, j - 1);
+					flag = true;
+				}
+			}
+		}
+	}
 
 	public static void main(String[] args) {
-		int[] arr = {38, 17, 16, 16, 7, 31, 39, 32, 2, 11};
 		BubbleSort bs = new BubbleSort();
-		bs.sort(arr);
+		
+		int[] arr = new int[10000];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int) (Math.random() * 1000);
+		}
+		
+		long start = System.currentTimeMillis();
+//		bs.sort(arr);
+//		bs.realSort(arr);
+		bs.realSort2(arr);
+		System.out.println("Cost time: " + (System.currentTimeMillis() - start) + "ms.");
+		
 		ArraysUtil.print(arr);
 	}
 
