@@ -2,6 +2,8 @@ package com.changyou.demo.datastructure.sort;
 
 /**
  * 希尔排序
+ * 不稳定的排序，时间复杂度为O(n^3/2)
+ * 增量序列的最后一个增量值必须为1
  * @author xubenling
  * @date Jun 24, 2015 4:55:29 PM
  */
