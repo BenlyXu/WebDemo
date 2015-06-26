@@ -77,8 +77,14 @@ public class StringOperation {
 		/**
 		 * 字符串反转
 		 */
-		String s = "abcdefg";
-		System.out.println(so.reverse(s));
+//		String s = "abcdefg";
+//		System.out.println(so.reverse(s));
+		
+		
+//		int i = 1, j = 2;
+//		String s = "3";
+//		System.out.println(i + j + s);  // 33
+//		System.out.println(i + s + j);  // 132
 		
 	}
 
