@@ -1,4 +1,4 @@
-package com.changyou.demo.datastructure;
+package com.changyou.demo.points;
 
 public class IntegerOperation {
 

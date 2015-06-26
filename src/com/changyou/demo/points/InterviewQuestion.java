@@ -1,4 +1,4 @@
-package com.changyou.demo.datastructure;
+package com.changyou.demo.points;
 
 import java.util.Arrays;
 

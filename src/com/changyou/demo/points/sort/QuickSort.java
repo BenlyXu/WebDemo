@@ -1,4 +1,4 @@
-package com.changyou.demo.datastructure.sort;
+package com.changyou.demo.points.sort;
 
 /**
  * 快速排序，不稳定的排序方法

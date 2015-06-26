@@ -1,4 +1,4 @@
-package com.changyou.demo.datastructure.sort;
+package com.changyou.demo.points.sort;
 
 import java.util.Arrays;
 

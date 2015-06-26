@@ -1,4 +1,4 @@
-package com.changyou.demo.datastructure;
+package com.changyou.demo.points.string;
 
 public class StringOperation {
 
@@ -33,6 +33,10 @@ public class StringOperation {
 		return -1;
 	}
 	
+	
+	public String reverse(String s) {
+		return new StringBuilder(s).reverse().toString();
+	}
 	
 	/**
 	 * @param args
@@ -69,6 +73,12 @@ public class StringOperation {
 //		String str = "###   @1=19168 /* INT meta=0 nullable=0 is_null=0 */";
 //		String str = "###   @2='test12DIYUserManageAddPersonalToneBox' /* VARSTRING(300) meta=300 nullable=1 is_null=0 */";
 //		System.out.println(str.substring(str.indexOf("=") + 1, str.indexOf(" /*")));
+		
+		/**
+		 * 字符串反转
+		 */
+		String s = "abcdefg";
+		System.out.println(so.reverse(s));
 		
 	}
 

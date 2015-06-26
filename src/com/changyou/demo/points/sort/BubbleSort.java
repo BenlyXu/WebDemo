@@ -1,4 +1,6 @@
-package com.changyou.demo.datastructure.sort;
+package com.changyou.demo.points.sort;
+
+import java.util.Random;
 
 /**
  * 冒泡排序
@@ -58,7 +60,7 @@ public class BubbleSort {
 		
 		int[] arr = new int[10000];
 		for (int i = 0; i < arr.length; i++) {
-			arr[i] = (int) (Math.random() * 1000);
+			arr[i] = new Random().nextInt(10000);
 		}
 		
 		long start = System.currentTimeMillis();
