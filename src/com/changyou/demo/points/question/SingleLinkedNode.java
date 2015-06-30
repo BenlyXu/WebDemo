@@ -1,4 +1,4 @@
-package com.changyou.demo.points;
+package com.changyou.demo.points.question;
 
 import lombok.Data;
 

@@ -1,8 +1,8 @@
-package com.changyou.demo.points;
+package com.changyou.demo.points.question;
 
 import java.util.Arrays;
 
-public class InterviewQuestion {
+public class RandomMax {
 
 	/**
 	 * Get the second max number

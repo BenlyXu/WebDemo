@@ -49,7 +49,7 @@ public class StringBuilderAndBuffer {
 		
 		
 		/**
-		 * timeToSize
+		 * trimToSize
 		 */
 //		StringBuilder sb = new StringBuilder("hello string builder");
 //		System.out.println("length=" + sb.length());
