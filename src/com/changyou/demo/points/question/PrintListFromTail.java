@@ -42,29 +42,26 @@ public class PrintListFromTail {
 	public List<Integer> printListFromTailToHead(ListNode listNode) {
 		List<Integer> list = new ArrayList<Integer>();
 		
-//		while (listNode != null) {
-//			list.add(listNode.getVal());
-//			listNode = listNode.getNext();
-//		}
-//		Collections.reverse(list);
-		
 		while (listNode != null) {
-			list.add(0, listNode.getVal());  // 注意这个方法list.add(index, E)
+			list.add(listNode.getVal());
 			listNode = listNode.getNext();
 		}
+		Collections.reverse(list);
+		
+//		while (listNode != null) {
+//			list.add(0, listNode.getVal());  // 注意这个方法list.add(index, E)
+//			listNode = listNode.getNext();
+//		}
 		return list;
 	}
 
 	public static void main(String[] args) {
 		// Build object
-		ListNode ln1 = new ListNode();
-		ListNode ln2 = new ListNode();
-		ListNode ln3 = new ListNode();
-		ln1.setVal(1);
+		ListNode ln1 = new ListNode(1);
+		ListNode ln2 = new ListNode(2);
+		ListNode ln3 = new ListNode(3);
 		ln1.setNext(ln2);
-		ln2.setVal(2);
 		ln2.setNext(ln3);
-		ln3.setVal(3);
 		
 		PrintListFromTail obj = new PrintListFromTail();
 		List<Integer> tempList = obj.printListFromTailToHead(ln1);
