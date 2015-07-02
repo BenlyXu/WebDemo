@@ -90,36 +90,6 @@ public class RebuildBinaryTree {
 		return root;
 	}
 	
-	/**
-	 * NLR 前序遍历：PreorderTraversal
-	 * LNR 中序遍历：InorderTraversal
-	 * LRN 后续遍历：PostorderTraversal
-	 */
-	public void printByPostorder(TreeNode treeNode) {
-		if (null == treeNode) {
-			return;
-		}
-		// 先后序遍历左子树
-		printByPostorder(treeNode.getLeft());
-		// 再后续遍历右子树
-		printByPostorder(treeNode.getRight());
-		// 显示结点数据
-		System.out.print(treeNode.getVal() + " ");
-	}
-	
-	
-	public void printByPreorder(TreeNode treeNode) {
-		if (null == treeNode) {
-			return;
-		}
-		// 显示结点数据
-		System.out.print(treeNode.getVal() + " ");
-		// 先前序遍历左子树
-		printByPreorder(treeNode.getLeft());
-		// 再前续遍历右子树
-		printByPreorder(treeNode.getRight());
-	}
-	
 	
 	public static void main(String[] args) {
 		int[] pre = { 1, 2, 4, 7, 3, 5, 6, 8 };
@@ -127,9 +97,9 @@ public class RebuildBinaryTree {
 		int[] post = {7, 4, 2, 5, 8, 6, 3, 1};
 		
 		RebuildBinaryTree obj = new RebuildBinaryTree();
-		obj.printByPostorder(obj.reConstructByPreAndIn(pre, in));
+		TreeNode.printByPostorder(obj.reConstructByPreAndIn(pre, in));
 		System.out.println();
-		obj.printByPreorder(obj.reConstructByPostAndIn(post, in));
+		TreeNode.printByPreorder(obj.reConstructByPostAndIn(post, in));
 	}
 	
 }

@@ -10,4 +10,14 @@ public class ListNode {
 	public ListNode(int val) {
 		this.val = val;
 	}
+	
+	public static void print(ListNode head) {
+		if (null == head) {
+			return;
+		}
+		while (head != null) {
+			System.out.print(head.getVal() + " ");
+			head = head.getNext();
+		}
+	}
 }
