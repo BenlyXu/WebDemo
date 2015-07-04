@@ -2,11 +2,7 @@ package com.changyou.demo.util.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import org.apache.tomcat.util.bcel.classfile.Constant;
 
 import com.changyou.demo.Constants;
 
