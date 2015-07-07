@@ -1,5 +1,10 @@
 package com.changyou.demo.points.question;
 
+/**
+ * 基本类型，byte、char、short、int、long、float、double、boolean
+ * @author xubenling
+ * @date Jul 7, 2015 2:43:09 PM
+ */
 public class Primitive {
 	
 	public static void main(String[] args) {
