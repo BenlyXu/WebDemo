@@ -15,7 +15,7 @@ public class Singleton {
 	 * 懒汉模式，线程不安全
 	 */
 //	private static Singleton instance;
-//	public Singleton getInstance() {
+//	public static Singleton getInstance() {
 //		if (null == instance) {
 //			instance = new Singleton();
 //		}
@@ -36,10 +36,10 @@ public class Singleton {
 	/**
 	 * 饿汉模式，基于classloader机制避免了多线程同步的问题
 	 */
-//	private static Singleton instance = new Singleton();
-//	public Singleton getInstance() {
-//		return instance;
-//	}
+	private static Singleton instance = new Singleton();
+	public static Singleton getInstance() {
+		return instance;
+	}
 	
 	/**
 	 * 饿汉模式，变种
@@ -75,17 +75,17 @@ public class Singleton {
 	/**
 	 * 双重校验锁
 	 */
-	private static Singleton instance;
-	public static Singleton getInstance() {
-		if (null == instance) {
-			synchronized (instance) {
-				if (null == instance) {
-					instance = new Singleton();
-				}
-			}
-		}
-		return instance;
-	}
+//	private static Singleton instance;
+//	public static Singleton getInstance() {
+//		if (null == instance) {
+//			synchronized (instance) {
+//				if (null == instance) {
+//					instance = new Singleton();
+//				}
+//			}
+//		}
+//		return instance;
+//	}
 	
 
 }
