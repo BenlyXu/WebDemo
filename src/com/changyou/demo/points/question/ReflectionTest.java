@@ -2,6 +2,11 @@ package com.changyou.demo.points.question;
 
 import java.lang.reflect.Method;
 
+/**
+ * Java反射测试，参考<link>Reflection</link>
+ * @author xubenling
+ * @date Jul 7, 2015 2:30:03 PM
+ */
 public class ReflectionTest {
 	
 	public static void main(String[] args) throws Exception {

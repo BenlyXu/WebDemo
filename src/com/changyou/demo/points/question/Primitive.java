@@ -1,7 +1,7 @@
 package com.changyou.demo.points.question;
 
 public class Primitive {
-
+	
 	public static void main(String[] args) {
 		// byte: 1个字节，8位，-128～127
 		System.out.println("byte");
