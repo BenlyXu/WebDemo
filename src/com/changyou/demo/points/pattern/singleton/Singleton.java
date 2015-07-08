@@ -1,4 +1,4 @@
-package com.changyou.demo.points.pattern;
+package com.changyou.demo.points.pattern.singleton;
 
 /**
  * 几种单例模式
