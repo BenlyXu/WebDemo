@@ -19,7 +19,9 @@ public class Agent implements Landlord {
 
 	@Override
 	public void rentOut(String house, double price) {
+		System.out.println("我正在代理类：" + this.landlord.getClass().getName());
 		this.landlord.rentOut(house, price);
+		System.out.println("代理结束");
 	}
 
 }
