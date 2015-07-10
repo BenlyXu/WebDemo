@@ -86,6 +86,10 @@ public class StringOperation {
 //		System.out.println(i + j + s);  // 33
 //		System.out.println(i + s + j);  // 132
 		
+//		String str1 = "abc";
+//		String str2 = str1;
+//		System.out.println(str1 == str2);  // true
+		
 	}
 
 }
