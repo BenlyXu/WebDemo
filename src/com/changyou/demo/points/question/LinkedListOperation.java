@@ -24,6 +24,21 @@ public class LinkedListOperation {
 	}
 	
 	/**
+	 * @description <p>从尾部开始打印链表</p>
+	 * @authors Benly
+	 * @date Jul 5, 2015 12:56:33 PM
+	 * @param head
+	 */
+	public static <T> void printFromTailToHead(Node<T> head) {
+		if (null == head) {
+			return;
+		}
+		printFromTailToHead(head.next);
+		System.out.print(head.data + " ");
+		// 或者借助栈来实现
+	}
+	
+	/**
 	 * @description <p>向尾部增加结点</p>
 	 * @authors Benly
 	 * @date Jul 5, 2015 12:18:52 PM
@@ -77,11 +92,11 @@ public class LinkedListOperation {
 //		addToTail(node1, node4);
 //		print(node1);
 		
-		delFromTail(node1);
-		print(node1);
-		System.out.println(node3 == null);
+//		delFromTail(node1);
+//		print(node1);
+//		System.out.println(node3 == null);
 		
-		
+		printFromTailToHead(node1);
 	}
 	
 	public static class Node<T> {

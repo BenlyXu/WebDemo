@@ -17,11 +17,24 @@ public class BinaryOperation {
 		return count;
 	}
 	
+	public int numberOf1(int n) {
+		int count = 0;
+		while (n != 0) {
+			if ((n & 1) == 1) {
+				count++;
+			}
+			n = n >> 1;
+		}
+		return count;
+	}
+	
 	public static void main(String[] args) {
 		BinaryOperation b = new BinaryOperation();
 		
 		System.out.println(b.countOne(10));  // 1010
 		System.out.println(b.countOne(15));  // 1111
+		
+		System.out.println(b.numberOf1(10));
 	}
 
 }
