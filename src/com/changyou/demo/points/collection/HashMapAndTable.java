@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
+import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -73,27 +74,31 @@ public class HashMapAndTable {
 		 * HashMap vs Hashtable
 		 * 1.HashMap允许key和value为null，而Hashtable不允许
 		 * 2.HashTable是同步的，而HashMap不是。所以HashMap适合单线程环境，Hashtable适合多线程环境
-		 * 3.如果要求输入输出的顺序相同，可以使用HashMap的子类LinkedHashMap；而Hashtable的顺序是不可预知的
+		 * 3.如果要求输入输出的顺序相同，可以使用HashMap的子类LinkedHashMap；而Hashtable的顺序是不可预知的;TreeMap会对放入的元素按key进行排序
 		 * 4.Hashtable被认为是个遗留的类，如果你寻求在迭代的时候修改Map，应该使用ConcurrentHashMap
 		 * 
 		 */
 		System.out.println("------------------------Split Line------------------------");
 		Map<Integer, Integer> hashMap = new HashMap<Integer, Integer>(10);
-		Map<Integer, Integer> linkedHashMap = new LinkedHashMap<Integer, Integer>();
-		Map<Integer, Integer> concurrentHashMap = new ConcurrentHashMap<Integer, Integer>();
+		Map<Integer, Integer> linkedHashMap = new LinkedHashMap<Integer, Integer>(10);
+		Map<Integer, Integer> concurrentHashMap = new ConcurrentHashMap<Integer, Integer>(10);
+		Map<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
 		Map<Integer, Integer> table = new Hashtable<Integer, Integer>(10);
 		Random random = new Random();
-		for (int i = 'A'; i < 'A' + 10; i++) {
+		for (int i = 'A'; i > 'A' - 10; i--) {
 			int r = random.nextInt(100);
 			hashMap.put(i, r);
 			linkedHashMap.put(i, r);
 			concurrentHashMap.put(i, r);
+			treeMap.put(i, r);
 			table.put(i, r);
 		}
 		iterateMap(hashMap);  // 无序
 		iterateMap(linkedHashMap);  // 有序
 		iterateMap(concurrentHashMap);  // 无序
+		iterateMap(treeMap);  // 有序
 		iterateMap(table);  // 无序
+		
 	}
 	
 	/**
@@ -101,6 +106,7 @@ public class HashMapAndTable {
 	 * @param map
 	 */
 	private static void iterateMap(Map<Integer, Integer> map) {
+		System.out.println(map.getClass().getSimpleName());
 		for (Entry<Integer, Integer> entry : map.entrySet()) {
 			System.out.print(entry.getKey() + "=" + entry.getValue() + " ");
 		}
