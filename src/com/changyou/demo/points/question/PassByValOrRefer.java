@@ -1,5 +1,10 @@
 package com.changyou.demo.points.question;
 
+/**
+ * String是值传递
+ * @author xubenling
+ * @date Jul 10, 2015 4:21:25 PM
+ */
 public class PassByValOrRefer {
 	
 	public void byVal(int a) {
@@ -13,7 +18,7 @@ public class PassByValOrRefer {
 	}
 	
 	public void byVal(StringBuilder builder) {
-		builder = new StringBuilder("hello java");
+		builder.append(" hello java");
 		System.out.println("方法中=" + builder.toString());
 	}
 	
