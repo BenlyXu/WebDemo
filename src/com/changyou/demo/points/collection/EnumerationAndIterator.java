@@ -1,7 +1,10 @@
 package com.changyou.demo.points.collection;
 
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
 import java.util.Vector;
 
@@ -40,6 +43,20 @@ public class EnumerationAndIterator {
 			System.out.print(it.next());
 		}
 		System.out.println("\r\n耗时：" + (System.currentTimeMillis() - start));
+		
+		/*
+		 * Iterator vs ListIterator
+		 * 1.Iterator可以遍历Set或List集合，而ListIterator只能遍历List集合
+		 * 2.Iterator只能向前遍历，而ListIterator可以双向遍历
+		 * 3.ListIterator从Iterator继承，然后添加了一些额外的功能，比如添加一个元素、替换一个元素、获取前面或后面元素的位置
+		 */
+		List<String> list = Arrays.asList("a", "b", "c");
+		ListIterator<String> listIterator = list.listIterator();
+		while (listIterator.hasNext()) {
+			int index = listIterator.nextIndex();
+			String val = listIterator.next();
+			System.out.println("index=" + index + ", value=" + val);
+		}
 		
 	}
 	
