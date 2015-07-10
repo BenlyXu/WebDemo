@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 1.HashMap是非线程安全，而Hashtable是线程安全的
@@ -64,6 +68,43 @@ public class HashMapAndTable {
 		for (Entry<Integer, Integer> entry : list) {
 			System.out.println(entry.getKey() + "=" + entry.getValue());
 		}
+		
+		/**
+		 * HashMap vs Hashtable
+		 * 1.HashMap允许key和value为null，而Hashtable不允许
+		 * 2.HashTable是同步的，而HashMap不是。所以HashMap适合单线程环境，Hashtable适合多线程环境
+		 * 3.如果要求输入输出的顺序相同，可以使用HashMap的子类LinkedHashMap；而Hashtable的顺序是不可预知的
+		 * 4.Hashtable被认为是个遗留的类，如果你寻求在迭代的时候修改Map，应该使用ConcurrentHashMap
+		 * 
+		 */
+		System.out.println("------------------------Split Line------------------------");
+		Map<Integer, Integer> hashMap = new HashMap<Integer, Integer>(10);
+		Map<Integer, Integer> linkedHashMap = new LinkedHashMap<Integer, Integer>();
+		Map<Integer, Integer> concurrentHashMap = new ConcurrentHashMap<Integer, Integer>();
+		Map<Integer, Integer> table = new Hashtable<Integer, Integer>(10);
+		Random random = new Random();
+		for (int i = 'A'; i < 'A' + 10; i++) {
+			int r = random.nextInt(100);
+			hashMap.put(i, r);
+			linkedHashMap.put(i, r);
+			concurrentHashMap.put(i, r);
+			table.put(i, r);
+		}
+		iterateMap(hashMap);  // 无序
+		iterateMap(linkedHashMap);  // 有序
+		iterateMap(concurrentHashMap);  // 无序
+		iterateMap(table);  // 无序
+	}
+	
+	/**
+	 * 遍历map
+	 * @param map
+	 */
+	private static void iterateMap(Map<Integer, Integer> map) {
+		for (Entry<Integer, Integer> entry : map.entrySet()) {
+			System.out.print(entry.getKey() + "=" + entry.getValue() + " ");
+		}
+		System.out.println();
 	}
 
 }
