@@ -35,7 +35,14 @@ public class StringOperation {
 	
 	
 	public String reverse(String s) {
-		return new StringBuilder(s).reverse().toString();
+//		return new StringBuilder(s).reverse().toString();
+		/**
+		 * 另一种实现方式
+		 */
+		if (null == s || 0 == s.length()) {
+			return s;
+		}
+		return reverse(s.substring(1)) + s.charAt(0);
 	}
 	
 	/**
@@ -77,8 +84,8 @@ public class StringOperation {
 		/**
 		 * 字符串反转
 		 */
-//		String s = "abcdefg";
-//		System.out.println(so.reverse(s));
+		String s = "abcdefg";
+		System.out.println(so.reverse(s));
 		
 		
 //		int i = 1, j = 2;
