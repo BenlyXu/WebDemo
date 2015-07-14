@@ -1,10 +1,7 @@
 package com.demo.points.thread;
 
-public class TestRunnable implements Runnable {
-
-	@Override
+public class ThreadTest extends Thread {
 	public void run() {
 		System.out.println(this.getClass().getName());
 	}
-
 }

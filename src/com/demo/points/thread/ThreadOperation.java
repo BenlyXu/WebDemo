@@ -4,10 +4,10 @@ public class ThreadOperation {
 
 	public static void main(String[] args) {
 		// Implements interface Runnable
-		new Thread(new TestRunnable()).start();
+		new Thread(new RunnableTest()).start();
 		
 		// Extends class Thread
-		new TestThread().start();
+		new ThreadTest().start();
 		
 		// Anonymous
 		new Thread() {
