@@ -1,17 +1,15 @@
 package com.demo.util;
 
-import java.io.File;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import java.util.Collection;
-
-import org.apache.commons.io.FileUtils;
 
 /**
  * @author xubenling
@@ -71,6 +69,33 @@ public final class FileUtil {
 			}
 		}
 	}
+	
+	
+	/**
+	 * 统计给定文件中给定字符串出现的次数
+	 * @param fileName
+	 * @param word
+	 * @return
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static int countWordInFile(String fileName, String word) throws FileNotFoundException, IOException {
+		int count = 0;
+		try(FileReader fr = new FileReader(fileName)) {
+			try(BufferedReader br = new BufferedReader(fr)) {
+				String line = null;
+				while ((line = br.readLine()) != null) {
+					int index = -1;
+					while (line.length() >= word.length() && (index = line.indexOf(word)) >= 0) {
+						count++;
+						line = line.substring(index + word.length());
+					}
+				}
+			}
+		}
+		return count;
+	}
+	
 
 	public static void main(String[] args) throws IOException {
 //		String[] extensions = {"txt", "docx"};
