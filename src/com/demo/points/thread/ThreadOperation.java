@@ -24,6 +24,7 @@ public class ThreadOperation {
 			}
 		}.start();
 		
+		// Implements interface Callable
 		List<Future<Integer>> list = new ArrayList<>();
 		ExecutorService service = Executors.newFixedThreadPool(10);
 		for (int i = 0; i < 10; i++) {
