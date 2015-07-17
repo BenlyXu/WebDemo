@@ -39,7 +39,7 @@ public final class FileUtil {
 			try(OutputStream out = new FileOutputStream(target)) {
 				byte[] buffer = new byte[4096];
 				int bytesToRead;
-				while ((bytesToRead = in.read()) != -1) {
+				while ((bytesToRead = in.read(buffer)) != -1) {
 					out.write(buffer, 0, bytesToRead);;
 				}
 				System.out.println("Copy file successfully.");
@@ -57,12 +57,17 @@ public final class FileUtil {
 	public static void fileCopyNIO(String source, String target) throws IOException {
 		try(FileInputStream in = new FileInputStream(source)) {
 			try(FileOutputStream out = new FileOutputStream(target)) {
+				// 获取通道
 				FileChannel inChannel = in.getChannel();
 				FileChannel outChannel = out.getChannel();
-				ByteBuffer buffer = ByteBuffer.allocate(4096);
+				// 创建缓冲区
+				ByteBuffer buffer = ByteBuffer.allocate(2048);
+				// 循环复制
 				while (inChannel.read(buffer) != -1) {
+					// 让缓冲区新读入的数据写入另一个通道
 					buffer.flip();
 					outChannel.write(buffer);
+					// 重设缓冲区，使它可以接受新读入的数据
 					buffer.clear();
 				}
 				System.out.println("Copy file successfully.");
@@ -104,7 +109,9 @@ public final class FileUtil {
 //			System.out.println(file.getPath());
 //		}
 		
-		fileCopyNIO("e:/website.txt", "e:/website_copy.txt");
+		long start = System.currentTimeMillis();
+		fileCopyNIO("D:\\Tools\\mongodb-win32-i386-2.4.5.zip", "D:\\Tools\\mongodb-win32-i386-2.4.5-new.zip");
+		System.out.println(new StringBuilder("耗时：").append(System.currentTimeMillis() - start).append("ms").toString());
 	}
 
 }
