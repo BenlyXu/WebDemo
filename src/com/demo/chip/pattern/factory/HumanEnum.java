@@ -2,12 +2,12 @@ package com.demo.chip.pattern.factory;
 
 public enum HumanEnum {
 
-	YellowMaleHuman("com.demo.points.pattern.factory.YellowMaleHuman"),
-	YellowFemaleHuman("com.demo.points.pattern.factory.YellowFemaleHuman"),
-	WhiteMaleHuman("com.demo.points.pattern.factory.WhiteMaleHuman"),
-	WhiteFemaleHuman("com.demo.points.pattern.factory.WhiteFemaleHuman"),
-	BlackMaleHuman("com.demo.points.pattern.factory.BlackMaleHuman"),
-	BlackFemaleHuman("com.demo.points.pattern.factory.BlackFemaleHuman");
+	YellowMaleHuman("com.demo.chip.pattern.factory.YellowMaleHuman"),
+	YellowFemaleHuman("com.demo.chip.pattern.factory.YellowFemaleHuman"),
+	WhiteMaleHuman("com.demo.chip.pattern.factory.WhiteMaleHuman"),
+	WhiteFemaleHuman("com.demo.chip.pattern.factory.WhiteFemaleHuman"),
+	BlackMaleHuman("com.demo.chip.pattern.factory.BlackMaleHuman"),
+	BlackFemaleHuman("com.demo.chip.pattern.factory.BlackFemaleHuman");
 	
 	private String value = "";
 	private HumanEnum(String value) {
